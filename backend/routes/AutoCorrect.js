@@ -14,7 +14,7 @@ function autoCorrect(word) {
 }
 
 router.get('/', (req, res) => {
-    const { word } = req.body;  // Make sure you send the data in the request body
+    const { word } = req.body;  
     if (!word) {
         return res.status(400).json({ error: 'Word is required' });
     }
