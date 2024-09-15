@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Note = require('../models/Note.model');
 
+
+
 router.post('/add', (req, res) =>{
     const { title, content} = req.body;
 

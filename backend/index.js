@@ -18,10 +18,13 @@ connection.once('open', () =>{
     console.log('MongoDB connection established Successfully');
 });
 
-const NotesRouter = require('./routes/Notes');
-app.use('/Notes', NotesRouter);
+const notesRouter = require('./routes/Notes');
+const autoSuggestRouter = require('./routes/AutoSuggest');
+const autoCorrectRouter = require('./routes/AutoCorrect');
+app.use('/notes', notesRouter);
+app.use('/autosuggest', autoSuggestRouter);
+app.use('/autocorrect', autoCorrectRouter);
 
 app.listen(PORT, () =>{
     console.log(`Server running on port : ${PORT}`);
-
 });
